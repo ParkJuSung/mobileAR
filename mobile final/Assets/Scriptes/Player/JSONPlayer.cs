@@ -7,35 +7,39 @@ using System.IO;
 
 public class JSONPlayer : MonoBehaviour {
 	// Use this for initialization
-	public static JSONPlayer Instance = null;
+	public static JSONPlayer instance = null;
+	public Transform me;
 	public PlayerInfo player;
-	public Transform me = null;
+	//public Transform me = null;
 
-	/*public static JSONPlayer Instacne
+	/*public static JSONPlayer instance
 	{
 		get
 		{
-			if (instance == null)
-				instance = new JSONPlayer();
+			if (Instance == null)
+				Instance = new JSONPlayer();
 
-			return instance;
+			return Instance;
 		}
 	}*/
 	void Start () {
 
-		if(Instance == null)
-		{
-			DontDestroyOnLoad(gameObject);
-			Instance = this;
-		}
-		else if(Instance != this)
-		{
-			Destroy(gameObject);
-		}
+			if(instance == null)
+			{
+				DontDestroyOnLoad(gameObject);
+				instance = this;
+			}
+			else if(instance != this)
+			{
+				Destroy(gameObject);
+			}
 		string fliePath = Path.Combine(Application.dataPath, "Resources/JsonTest.json");
 		string jsonFormFile = File.ReadAllText(fliePath);
 
 		PlayerInfo tempP = JsonUtility.FromJson<PlayerInfo>(jsonFormFile);
+
+		player.speed = tempP.speed;
+		player.position = tempP.position;
 		if (tempP.HP <= 0)
 		{
 			tempP.HP = 100;
@@ -63,19 +67,20 @@ public class JSONPlayer : MonoBehaviour {
 
 		File.WriteAllText(fliePath, jsonToFile);
 	}
-	public void Load()
+	public  void Load()
 	{
 		string fliePath = Path.Combine(Application.dataPath, "Resources/JsonTest.json");
 		string jsonFormFile = File.ReadAllText(fliePath);
 
 		PlayerInfo newMyClass = JsonUtility.FromJson<PlayerInfo>(jsonFormFile);
-
-		player.speed = newMyClass.speed;
-		player.position = newMyClass.position;
-		player.HP = newMyClass.HP;
+		player = new PlayerInfo(newMyClass.speed, newMyClass.position,newMyClass.HP);
+		//player.speed = newMyClass.speed;
+		//player.position = newMyClass.position;
+		//player.HP = newMyClass.HP;
 		if (player.player == null)
 		{
-			player.player = Instantiate(me, player.position, Quaternion.identity);
+			player.player = Instantiate(Resources.Load("player",typeof(Transform)), player.position, Quaternion.identity) as Transform;
+			//player.light = Instantiate(Resources.Load("light", typeof(Light)), new Vector3(-82, 141, 143), Quaternion.identity) as Light;
 		}
 		else
 		{

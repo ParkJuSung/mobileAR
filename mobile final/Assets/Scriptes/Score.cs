@@ -13,7 +13,7 @@ public class Score : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-		if(JSONPlayer.Instance.player.player!=null && JSONPlayer.Instance.player.HP>0)
+		if(JSONPlayer.instance.player.player!=null && JSONPlayer.instance.player.HP>0)
 		{
 			t.text = "Score" + Time.time;
 		}

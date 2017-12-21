@@ -34,14 +34,14 @@ public class Sight : MonoBehaviour
 
 		if (Physics.Raycast(SearchPos.position, SearchPos.forward, out hit, 10.0f))
 		{
-			if (hit.collider.tag == "player")
+			if (hit.collider.tag == "Player")
 			{
-				JSONPlayer.Instance.player.HP--;
-				if (JSONPlayer.Instance.player.HP <= 0)
+				JSONPlayer.instance.player.HP--;
+				if (JSONPlayer.instance.player.HP <= 0)
 				{ 
-				Destroy(JSONPlayer.Instance.player.player.gameObject);
-				PlayerInfo playerInfo = new PlayerInfo(JSONPlayer.Instance.player.speed,
-					JSONPlayer.Instance.player.player.position, JSONPlayer.Instance.player.HP);
+				Destroy(JSONPlayer.instance.player.player.gameObject);
+				PlayerInfo playerInfo = new PlayerInfo(JSONPlayer.instance.player.speed,
+					JSONPlayer.instance.player.player.position, JSONPlayer.instance.player.HP);
 				string jsonToFile = JsonUtility.ToJson(playerInfo, true);
 				//Debug.Log(jsonToFile);
 
@@ -50,7 +50,7 @@ public class Sight : MonoBehaviour
 				File.WriteAllText(fliePath, jsonToFile);
 				}
 
-				Debug.Log(JSONPlayer.Instance.player.HP);
+				Debug.Log(JSONPlayer.instance.player.HP);
 			}
 		}
 

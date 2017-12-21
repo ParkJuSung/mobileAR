@@ -13,20 +13,20 @@ public class Player : MonoBehaviour {
 	void Update () {
 		if (Input.GetKey(KeyCode.A))
 		{
-			transform.Translate(Vector3.left * JSONPlayer.Instance.player.speed * Time.deltaTime);
+			transform.Translate(Vector3.left * JSONPlayer.instance.player.speed * Time.deltaTime);
 
 		}
 		if (Input.GetKey(KeyCode.D))
 		{
-			transform.Translate(Vector3.right * JSONPlayer.Instance.player.speed * Time.deltaTime);
+			transform.Translate(Vector3.right * JSONPlayer.instance.player.speed * Time.deltaTime);
 		}
 		if (Input.GetKey(KeyCode.W))
 		{
-			transform.Translate(Vector3.forward * JSONPlayer.Instance.player.speed * Time.deltaTime);
+			transform.Translate(Vector3.forward * JSONPlayer.instance.player.speed * Time.deltaTime);
 		}
 		if (Input.GetKey(KeyCode.S))
 		{
-			transform.Translate(Vector3.back * JSONPlayer.Instance.player.speed * Time.deltaTime);
+			transform.Translate(Vector3.back * JSONPlayer.instance.player.speed * Time.deltaTime);
 		}
 	}
 
