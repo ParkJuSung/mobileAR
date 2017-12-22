@@ -91,8 +91,6 @@ public class JSONGrid : MonoBehaviour {
 				tree[i] = Instantiate(Resources.Load("Olive_Tree_Prefab", typeof(GameObject)), Grid.GetVector(i), Quaternion.Euler(-90, 0, 0)) as GameObject;
 				grid.wall[i] = 3;
 			}
-
-
 		}
 	}
 

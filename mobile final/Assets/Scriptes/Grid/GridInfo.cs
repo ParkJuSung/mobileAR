@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class GridInfo{
 	public int[] wall = new int[100];
-	public int N = 10;
+	//public int N = 10;
 
 	public bool[] gridtpye = new bool[3];
 	public GridInfo(int N,int[] wall)
 	{
-
-
 		for (int i =0;i<100;i++)
 		{
 			this.wall[i] = wall[i];

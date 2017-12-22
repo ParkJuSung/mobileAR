@@ -30,8 +30,8 @@ public class Grid : MonoBehaviour {
 			int temp = GetGridNumber(hit.point);
 			if (JSONGrid.Instance.grid.gridtpye[0])
 			{
-					Instantiate(Resources.Load("wall", typeof(GameObject))
-					, GetVector(temp), Quaternion.identity);
+				JSONGrid.Instance.cube[temp] = Instantiate(Resources.Load("wall", typeof(GameObject))
+					, GetVector(temp), Quaternion.identity) as GameObject;
 				JSONGrid.Instance.grid.wall[temp] = 1;
 
 			}
