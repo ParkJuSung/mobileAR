@@ -73,10 +73,10 @@ public class JSONPlayer : MonoBehaviour {
 		string jsonFormFile = File.ReadAllText(fliePath);
 
 		PlayerInfo newMyClass = JsonUtility.FromJson<PlayerInfo>(jsonFormFile);
-		player = new PlayerInfo(newMyClass.speed, newMyClass.position,newMyClass.HP);
+		//player = new PlayerInfo(newMyClass.speed, newMyClass.position,newMyClass.HP);
 		//player.speed = newMyClass.speed;
-		//player.position = newMyClass.position;
-		//player.HP = newMyClass.HP;
+		player.position = newMyClass.position;
+		player.HP = newMyClass.HP;
 		if (player.player == null)
 		{
 			player.player = Instantiate(Resources.Load("player",typeof(Transform)), player.position, Quaternion.identity) as Transform;

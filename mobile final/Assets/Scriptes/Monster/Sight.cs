@@ -30,9 +30,9 @@ public class Sight : MonoBehaviour
 
 		transform.Rotate(SearchPos.up, Torque * Time.deltaTime * 20);
 		Debug.DrawRay(new Vector3(SearchPos.position.x,SearchPos.position.y+1.2f,SearchPos.position.z)
-					  , SearchPos.forward*10, Color.green);
+					  , SearchPos.forward*5, Color.green);
 
-		if (Physics.Raycast(SearchPos.position, SearchPos.forward, out hit, 10.0f))
+		if (Physics.Raycast(SearchPos.position, SearchPos.forward, out hit, 5.0f))
 		{
 			if (hit.collider.tag == "Player")
 			{

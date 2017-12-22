@@ -131,7 +131,7 @@ public class DialogueManager : MonoBehaviour {
 		{
 			if(lineNum>=7)
 			{
-				//SceneManager.LoadScene("mobile");
+				exitBox.SetActive(true);
 			}
 			ClearButtons();
 

@@ -86,8 +86,8 @@
     <Compile Include="Assets\Scriptes\Grid\GridInfo.cs" />
     <Compile Include="Assets\Scriptes\Grid\JSONGrid.cs" />
     <Compile Include="Assets\Scriptes\Monster\JSONMonster.cs" />
-    <Compile Include="Assets\Scriptes\Monster\Monster.cs" />
     <Compile Include="Assets\Scriptes\Monster\MonsterInfo.cs" />
+    <Compile Include="Assets\Scriptes\Monster\Monstermanager.cs" />
     <Compile Include="Assets\Scriptes\Monster\Sight.cs" />
     <Compile Include="Assets\Scriptes\MoveScene.cs" />
     <Compile Include="Assets\Scriptes\NPC.cs" />
